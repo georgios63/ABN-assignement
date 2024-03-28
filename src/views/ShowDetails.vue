@@ -8,6 +8,7 @@
       <p v-if="show.rating && show.rating.average" class="show-rating">
         Rating: {{ show.rating.average }}/10
       </p>
+      <p class="show-status">Status: {{ show.status }}</p>
       <div v-html="show.summary" class="show-summary"></div>
     </div>
   </div>
@@ -46,7 +47,6 @@ export default {
     flex-direction: column;
 
     .show-text-content {
-      color: #ffffff;
       flex: unset;
       max-width: unset;
     }

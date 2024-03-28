@@ -44,6 +44,7 @@ nav a.router-link-exact-active {
 
 nav a.router-link-exact-active:hover {
   background-color: transparent;
+  color: hsla(160, 100%, 37%, 1);
 }
 
 nav a {

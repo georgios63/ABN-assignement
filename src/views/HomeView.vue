@@ -122,10 +122,9 @@ export default {
 }
 
 .search-bar:focus {
-  border-color: #007bff; /* Highlight color when focused */
+  border-color: #007bff;
 }
 
-/* Optionally, style the placeholder text */
 .search-bar::placeholder {
   color: #888;
 }

@@ -7,7 +7,7 @@ import { RouterLink, RouterView } from "vue-router";
     <div class="wrapper">
       <nav>
         <!-- Here we ll have the home page and details page -->
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">Home of ABNetflix</RouterLink>
         <!-- <RouterLink to="/about">Details Page</RouterLink> -->
       </nav>
     </div>
@@ -23,8 +23,9 @@ template {
 }
 
 header {
-  line-height: 1.5;
   max-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
@@ -39,6 +40,7 @@ nav {
 }
 
 nav a.router-link-exact-active {
+  font-size: 24px;
   color: var(--color-text);
 }
 
@@ -50,6 +52,8 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
+  font-size: 24px;
+  color: hsla(160, 100%, 37%, 1);
   border-left: 1px solid var(--color-border);
 }
 

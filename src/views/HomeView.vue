@@ -85,7 +85,7 @@ export default {
           )}`
         );
         const results = await response.json();
-        this.searchResults = results.map((item) => item.show); // Extract the show data from the search results
+        this.searchResults = results.map((item) => item.show);
       } catch (error) {
         console.error("Error fetching search results:", error);
         this.searchResults = [];

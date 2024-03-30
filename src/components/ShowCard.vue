@@ -32,9 +32,6 @@ export default {
   transition: background-color 0.3s ease;
 }
 
-.show-card:hover {
-}
-
 .show-card h2,
 .show-card p {
   overflow: hidden;

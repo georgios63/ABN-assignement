@@ -20,6 +20,7 @@
         <li
           v-for="episode in filteredEpisodes(season?.number)"
           :key="episode.id"
+          @click="toggleModal"
           class="episode"
         >
           <div v-if="episode.image">
@@ -36,6 +37,14 @@
       </ul>
     </div>
   </div>
+  <div v-if="showModal" class="modal-overlay" @click="showModal = false">
+    <div class="modal-content" @click.stop>
+      <p>
+        The episodes are not available on your account. To be able to view them
+        please pass the assignement of the candidate!
+      </p>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -46,6 +55,7 @@ export default {
       show: null,
       seasons: [],
       episodes: [],
+      showModal: false,
     };
   },
   computed: {
@@ -76,6 +86,9 @@ export default {
     },
     filteredEpisodes(seasonNumber) {
       return this.episodes.filter((episode) => episode.season === seasonNumber);
+    },
+    toggleModal() {
+      this.showModal = !this.showModal;
     },
   },
 };
@@ -122,6 +135,16 @@ export default {
   margin-top: 20px;
 }
 
+.episode-image {
+  height: auto;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+li:hover .episode-image {
+  transform: scale(1.1);
+}
+
 .seasons-container {
   h2,
   h3 {
@@ -137,6 +160,7 @@ export default {
   }
 
   li {
+    cursor: pointer;
   }
 }
 
@@ -149,5 +173,27 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 200px;
+}
+
+.modal-overlay {
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 </style>

@@ -41,8 +41,8 @@ export default {
       featuredShows: [],
       highRatingShows: [],
       showsByGenre: [],
-      searchQuery: "", // Holds the current search query
-      searchResults: [], // Holds the search results
+      searchQuery: "",
+      searchResults: [],
     };
   },
   async created() {

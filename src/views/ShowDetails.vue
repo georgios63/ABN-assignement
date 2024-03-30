@@ -41,7 +41,7 @@
     <div class="modal-content" @click.stop>
       <p>
         The episodes are not available on your account. To be able to view them
-        please pass the assignement of the candidate!
+        please pass the assignment of the candidate!
       </p>
     </div>
   </div>
